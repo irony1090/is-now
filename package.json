@@ -1,15 +1,17 @@
 {
   "name": "@irony0901/is-now",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "elapsed time",
   "browser": "./dist/index.js",
   "main": "./dist/index.cjs.js",
   "module": "./dist/index.es.js",
   "types": "./dist/src/is_now.d.ts",
-  
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/irony1090/irony-isNow"
+    "url": "https://github.com/irony1090/is-now"
   },
   "author": {
     "name": "irony19",

@@ -1,8 +1,6 @@
-## irony isNow
----
-### A library that expresses rough date or time
-
-# Download
+# irony isNow
+### A library that expresses rough date or time   
+# use
 To install ironyIsNow, use yarn
 ```
 $ yarn add @irony0901/is-now
