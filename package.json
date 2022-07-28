@@ -1,0 +1,42 @@
+{
+  "name": "@irony0901/is-now",
+  "version": "0.3.0",
+  "description": "elapsed time",
+  "browser": "./dist/index.js",
+  "main": "./dist/index.cjs.js",
+  "module": "./dist/index.es.js",
+  "types": "./dist/src/is_now.d.ts",
+  
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/irony1090/irony-isNow"
+  },
+  "author": {
+    "name": "irony19",
+    "email": "strike910901@gmail.com",
+    "url": "https://github.com/irony1090"
+  },
+  "license": "MIT",
+  "scripts": {
+    "build": "rollup -c && tsc --emitDeclarationOnly",
+    "build:onlyC": "rollup -c",
+    "build:test": "tsc ./test/main.ts",
+    "start:test": "node ./test/main.js",
+    "start:dev": "rollup -c && node ./dist/index.js"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.18.9",
+    "@babel/preset-env": "^7.18.9",
+    "@rollup/plugin-babel": "^5.3.1",
+    "@rollup/plugin-commonjs": "^22.0.1",
+    "@rollup/plugin-node-resolve": "^13.3.0",
+    "@rollup/plugin-typescript": "^8.3.3",
+    "@types/uuid": "^8.3.4",
+    "rollup": "^2.77.0",
+    "rollup-plugin-typescript2": "^0.32.1",
+    "typescript": "^4.7.4"
+  },
+  "keywords": [
+    "time", "date", "elapsed", "about", "unit"
+  ]
+}

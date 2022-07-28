@@ -1,0 +1,16 @@
+# .npmignore
+
+*.md
+test/
+src/
+.babelrc.js
+LICENSE
+node_modules/
+.gitignore
+
+.eslintrc.js
+.prettierrc
+rollup.config.js
+tsconfig.json
+tsconfig.paths.json
+yarn.lock
