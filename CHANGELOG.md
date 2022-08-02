@@ -6,3 +6,4 @@
 * modify value. ElapsedPredictArg.diff.  
   The value of the amount is the future. The value of the negative is the past
 * predict example addition.
+* Remove devDependency of rollup-typescript
