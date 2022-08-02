@@ -189,7 +189,7 @@ console.log('[afterMoment]', isNow.about());
  * '[afterMoment] after a moment'
  **/
 
-console.log('[minute]', isNow.about(  now + (6000 * 2) ) );
+console.log('[minute]', isNow.about(  now + (12000 * 2) ) );
 /** 
  * '[PREDICT] diff: 120007, about: 2, unit: minute later'
  * '[minute] 2 minute later'
@@ -204,7 +204,7 @@ console.log('[afterMoment]', isNow.about(now + 250));
  * '[afterMoment] after a moment. [250] milliscdonds'
  **/
 
-console.log('[minute]', isNow.about(  now + (6000 * 2) ) );
+console.log('[minute]', isNow.about(  now + (12000 * 2) ) );
 /** 
  * '[minute] [2] minute later'
  **/

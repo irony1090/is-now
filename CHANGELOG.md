@@ -1,5 +1,8 @@
 # IsNow change log
 
+** 1.0.1
+* Modify the wrong word from README
+
 ## 0.3.2
 * Script command change.
 * Remove the @types/uuid from devDependencies
