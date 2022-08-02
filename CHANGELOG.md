@@ -1,7 +1,10 @@
 # IsNow change log
 
-** 1.0.1
-* Modify the wrong word from README
+## 1.0.2 (Build Yet...)
+* Modify the wrong word from README. 'Isnow.strandard' ->  'IsNow.standard'
+
+## 1.0.1
+* Modify the wrong word from README.
 
 ## 0.3.2
 * Script command change.

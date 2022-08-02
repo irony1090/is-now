@@ -164,7 +164,7 @@ The initialization form is as follows
 ```
 ### ElapsedPredictArg
 * diff: number   
-  The difference between the time at the time of the `'about'` method and the time of the [`Isnow.strandard`](#setStandardDate) field.   
+  The difference between the time at the time of the `'about'` method and the time of the [`IsNow.standard`](#setStandardDate) field.   
   Millisecond.   
   positive value - future   
   negative value - past
