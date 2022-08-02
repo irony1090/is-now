@@ -1,6 +1,6 @@
 {
   "name": "@irony0901/is-now",
-  "version": "0.3.2",
+  "version": "1.0.0",
   "description": "elapsed time",
   "browser": "./dist/index.js",
   "main": "./dist/index.cjs.js",
