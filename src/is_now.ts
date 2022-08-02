@@ -83,55 +83,56 @@ class IsNow {
       ? dateOrMilliseconds.getTime()
       : dateOrMilliseconds
     ;
-    const diff = this.standardLong - compare;
-    if( diff > 0 ){
+    const diff = compare - this.standardLong;
+    if( diff < 1 ){
 
-      if(diff > ONE_YEAR)
-        return this.predict({diff, about: Math.floor(diff / ONE_YEAR), unit: this.unit.yearAgo})
+      const positiveDiff = Math.abs(diff);
+      if(positiveDiff > ONE_YEAR)
+        return this.predict({diff, about: Math.floor(positiveDiff / ONE_YEAR), unit: this.unit.yearAgo})
         // return `${Math.floor(diff / ONE_YEAR)} ${this.unit.yearAgo}`
-      else if(diff > ONE_MONTH)
-        return this.predict({diff, about: Math.floor(diff / ONE_MONTH), unit: this.unit.monthAgo})
+      else if(positiveDiff > ONE_MONTH)
+        return this.predict({diff, about: Math.floor(positiveDiff / ONE_MONTH), unit: this.unit.monthAgo})
         // return `${Math.floor(diff / ONE_MONTH)} ${this.unit.monthAgo}`
-      else if(diff > ONE_WEEK)
-        return this.predict({diff, about: Math.floor(diff / ONE_WEEK), unit: this.unit.weekAgo})
+      else if(positiveDiff > ONE_WEEK)
+        return this.predict({diff, about: Math.floor(positiveDiff / ONE_WEEK), unit: this.unit.weekAgo})
       // return `${Math.floor(diff / ONE_WEEK)} ${this.unit.weekAgo}`
-      else if(diff > ONE_DAY)
-        return this.predict({diff, about: Math.floor(diff / ONE_DAY), unit: this.unit.dayAgo})
+      else if(positiveDiff > ONE_DAY)
+        return this.predict({diff, about: Math.floor(positiveDiff / ONE_DAY), unit: this.unit.dayAgo})
         // return `${Math.floor(diff / ONE_DAY)} ${this.unit.dayAgo}`
-      else if(diff > ONE_HOUR)
-        return this.predict({diff, about: Math.floor(diff / ONE_HOUR), unit: this.unit.hourAgo})
+      else if(positiveDiff > ONE_HOUR)
+        return this.predict({diff, about: Math.floor(positiveDiff / ONE_HOUR), unit: this.unit.hourAgo})
         // return `${Math.floor(diff / ONE_HOUR)} ${this.unit.hourAgo}`
-      else if(diff > ONE_MINUTE)
-        return this.predict({diff, about: Math.floor(diff / ONE_MINUTE), unit: this.unit.minuteAgo})
+      else if(positiveDiff > ONE_MINUTE)
+        return this.predict({diff, about: Math.floor(positiveDiff / ONE_MINUTE), unit: this.unit.minuteAgo})
         // return `${Math.floor(diff / ONE_MINUTE)} ${this.unit.minuteAgo}`
       else 
-        return this.predict({diff, about: diff, unit: this.unit.justBefore})
+        return this.predict({diff, about: positiveDiff, unit: this.unit.justBefore})
         // return this.unit.justBefore
       
     }else{
 
       // diff = Math.abs(diff);
-      const positiveDiff = Math.abs(diff);
-      if(positiveDiff > ONE_YEAR)
-        return this.predict({diff, about: Math.floor(positiveDiff / ONE_YEAR), unit: this.unit.yearLater})
+      
+      if(diff > ONE_YEAR)
+        return this.predict({diff, about: Math.floor(diff / ONE_YEAR), unit: this.unit.yearLater})
         // return `${Math.floor(diff / ONE_YEAR)} ${this.unit.yearLater}`
-      else if(positiveDiff > ONE_MONTH)
-        return this.predict({diff, about: Math.floor(positiveDiff / ONE_MONTH), unit: this.unit.monthLater})
+      else if(diff > ONE_MONTH)
+        return this.predict({diff, about: Math.floor(diff / ONE_MONTH), unit: this.unit.monthLater})
         // return `${Math.floor(diff / ONE_MONTH)} ${this.unit.monthLater}`
-      else if(positiveDiff > ONE_WEEK)
-        return this.predict({diff, about: Math.floor(positiveDiff / ONE_WEEK), unit: this.unit.weekLater})
+      else if(diff > ONE_WEEK)
+        return this.predict({diff, about: Math.floor(diff / ONE_WEEK), unit: this.unit.weekLater})
         // return `${Math.floor(diff / ONE_WEEK)} ${this.unit.weekLater}`
-      else if(positiveDiff > ONE_DAY)
-        return this.predict({diff, about: Math.floor(positiveDiff / ONE_DAY), unit: this.unit.dayLater})
+      else if(diff > ONE_DAY)
+        return this.predict({diff, about: Math.floor(diff / ONE_DAY), unit: this.unit.dayLater})
         // return `${Math.floor(diff / ONE_DAY)} ${this.unit.dayLater}`
-      else if(positiveDiff > ONE_HOUR)
-        return this.predict({diff, about: Math.floor(positiveDiff / ONE_HOUR), unit: this.unit.hourLater})
+      else if(diff > ONE_HOUR)
+        return this.predict({diff, about: Math.floor(diff / ONE_HOUR), unit: this.unit.hourLater})
         // return `${Math.floor(diff / ONE_HOUR)} ${this.unit.hourLater}`
-      else if(positiveDiff > ONE_MINUTE)
-        return this.predict({diff, about: Math.floor(positiveDiff / ONE_MINUTE), unit: this.unit.minuteLater})
+      else if(diff > ONE_MINUTE)
+        return this.predict({diff, about: Math.floor(diff / ONE_MINUTE), unit: this.unit.minuteLater})
         // return `${Math.floor(diff / ONE_MINUTE)} ${this.unit.minuteLater}`
       else 
-        return this.predict({diff, about: positiveDiff, unit: this.unit.afterMoment})
+        return this.predict({diff, about: diff, unit: this.unit.afterMoment})
         // return this.unit.afterMoment
       
     }

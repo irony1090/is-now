@@ -12,7 +12,7 @@ $ yarn add @irony0901/is-now
   * [unit setting](#unitSetting)
   * [set standard date](#setStandardDate)
   * [create instance](#createInstance)
-  * [predict](#predict) **( comming soon )**
+  * [predict](#predict)
 
 # Examples
 ## getStarted
@@ -153,4 +153,59 @@ isNow_ko.unit.yearAgo = '년 전';
 console.log('Ver_Eng', isNow.about())   // 'Ver_Eng after a moment'
 console.log('Ver_Ko', isNow_ko.about()) // 'Ver_Ko 조금 후'
 
+```
+
+## predict
+A method that can modify the return result of the `'about'` method.   
+The initialization form is as follows
+```
+({diff, about, unit}: ElapsedPredictArg) => 
+  Math.abs(diff) === about ? unit : `${about} ${unit}`
+```
+### ElapsedPredictArg
+* diff: number   
+  The difference between the time at the time of the `'about'` method and the time of the [`Isnow.strandard`](#setStandardDate) field.   
+  Millisecond.   
+  positive value - future   
+  negative value - past
+* about: number   
+  Unconditionally positive value.   
+  Value to be expressed according to the value of the field in [`IsNow.unit`](#unitSetting)
+* unit: string   
+  The value of one of the fields in [`IsNow.unit`](#unitSetting)   
+
+``` javascript
+import isNow from '@irony0901/is-now';
+
+const now = Date.now();
+isNow.predict = ({diff, about, unit}) => {
+  console.log(`[PREDICT] diff: ${diff}, about: ${about}, unit: ${unit}`);
+  return Math.abs(diff) === about ? unit : `${about} ${unit}`
+}
+
+console.log('[afterMoment]', isNow.about());
+/** 
+ * '[PREDICT] diff: 1, about: 1, unit: after a moment'
+ * '[afterMoment] after a moment'
+ **/
+
+console.log('[minute]', isNow.about(  now + (6000 * 2) ) );
+/** 
+ * '[PREDICT] diff: 120007, about: 2, unit: minute later'
+ * '[minute] 2 minute later'
+ **/
+
+isNow.predict = ({diff, about, unit}) => {
+  return Math.abs(diff) === about ? `${unit}. [${about}] millisconds` : `[${about}] ${unit}`
+}
+
+console.log('[afterMoment]', isNow.about(now + 250));
+/** 
+ * '[afterMoment] after a moment. [250] milliscdonds'
+ **/
+
+console.log('[minute]', isNow.about(  now + (6000 * 2) ) );
+/** 
+ * '[minute] [2] minute later'
+ **/
 ```

@@ -1,6 +1,6 @@
 {
   "name": "@irony0901/is-now",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "elapsed time",
   "browser": "./dist/index.js",
   "main": "./dist/index.cjs.js",
@@ -21,7 +21,7 @@
   "license": "MIT",
   "scripts": {
     "build": "rollup -c && tsc --emitDeclarationOnly",
-    "build:onlyC": "rollup -c",
+    "build:c": "rollup -c",
     "build:test": "tsc ./test/main.ts",
     "start:test": "node ./test/main.js",
     "start:dev": "rollup -c && node ./dist/index.js"
@@ -33,7 +33,6 @@
     "@rollup/plugin-commonjs": "^22.0.1",
     "@rollup/plugin-node-resolve": "^13.3.0",
     "@rollup/plugin-typescript": "^8.3.3",
-    "@types/uuid": "^8.3.4",
     "rollup": "^2.77.0",
     "rollup-plugin-typescript2": "^0.32.1",
     "typescript": "^4.7.4"
