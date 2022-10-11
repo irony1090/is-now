@@ -20,8 +20,8 @@
   },
   "license": "MIT",
   "scripts": {
-    "build": "rollup -c && tsc --emitDeclarationOnly",
-    "build:c": "rollup -c",
+    "build:dec": "rollup -c && tsc --emitDeclarationOnly",
+    "build": "rollup -c",
     "build:test": "tsc ./test/main.ts",
     "start:test": "node ./test/main.js",
     "start:dev": "rollup -c && node ./dist/index.js"

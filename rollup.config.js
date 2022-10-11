@@ -28,20 +28,20 @@ export default [
       {
         name: moduleName.replace('-', '_'),
         file: pkg.browser,
-        format: "iife",
+        format: "umd",
         // sourcemap: "inline",
-        exports: "named",
+        // exports: "named",
         banner,
-      },
-      {
-        name: moduleName.replace('-', '_'),
-        file: pkg.browser.replace(".js", ".min.js"),
-        format: "iife",
-        // sourcemap: "inline",
-        exports: "named",
-        banner,
-        // plugins: [terser()],
-      },
+      }
+      // {
+      //   name: moduleName.replace('-', '_'),
+      //   file: pkg.browser.replace(".js", ".min.js"),
+      //   format: "iife",
+      //   // sourcemap: "inline",
+      //   exports: "named",
+      //   banner,
+      //   // plugins: [terser()],
+      // },
     ],
     // preserveModules: true,
     plugins: [
