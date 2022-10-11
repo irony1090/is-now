@@ -1,6 +1,9 @@
 # IsNow change log
 
-## 1.0.2 (Build Yet...)
+## 1.0.2
+* remove import default.
+
+## 1.0.2
 * Modify the wrong word from README. 'Isnow.strandard' ->  'IsNow.standard'
 * The build result in the browser is umd.
 

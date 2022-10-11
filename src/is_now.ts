@@ -140,6 +140,6 @@ class IsNow {
 }
 
 
-export default new IsNow();
+export const isNow = new IsNow();
 
 export const createIsNow = ( standard: Date = new Date() ) => new IsNow( standard );

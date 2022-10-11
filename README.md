@@ -17,7 +17,7 @@ $ yarn add @irony0901/is-now
 # Examples
 ## getStarted
 ``` javascript
-import isNow from '@irony0901/is-now';
+import {isNow} from '@irony0901/is-now';
 
 /** 
  * The argument can also be a number type. 
@@ -64,7 +64,7 @@ setTimeout(() => {
 
 ## unitSetting
 ``` javascript
-import isNow from '@irony0901/is-now';
+import {isNow} from '@irony0901/is-now';
 
 isNow.unit.afterMoment = '조금 후';
 isNow.unit.minuteLater = '분 후';
@@ -114,7 +114,7 @@ console.log( past_year )            // '1 년 전'
 
 ## setStandardDate
 ``` javascript
-import isNow from '@irony0901/is-now';
+import {isNow} from '@irony0901/is-now';
 
 /**
  * The method named about
@@ -131,7 +131,7 @@ console.log('compareModifiedResult is ', compareModifiedResult) // 'compareModif
 
 ## createInstance
 ``` javascript
-import isNow, { createIsNow } from '@irony0901/is-now';
+import { isNow, createIsNow } from '@irony0901/is-now';
 
 const isNow_ko = createIsNow();
 isNow_ko.unit.afterMoment = '조금 후';
@@ -175,7 +175,7 @@ The initialization form is as follows
   The value of one of the fields in [`IsNow.unit`](#unitSetting)   
 
 ``` javascript
-import isNow from '@irony0901/is-now';
+import {isNow} from '@irony0901/is-now';
 
 const now = Date.now();
 isNow.predict = ({diff, about, unit}) => {
